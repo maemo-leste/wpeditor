@@ -1,0 +1,10 @@
+prefix=@prefix@
+exec_prefix=@exec_prefix@
+libdir=@libdir@
+includedir=@includedir@/@PACKAGE_INC@
+
+Name: wpeditor
+Description: A library implementing WPTextBuffer and WPTextView, which can be used to easily support rich text editing.
+Version: @VERSION@
+Libs: -L${libdir} -lwpeditor
+Cflags: -I${includedir}

@@ -1,0 +1,5 @@
+#!/bin/sh
+cd ..
+rm -rf debian/tmp
+rm -rf debian/wpeditor-dev
+doxygen doxygen/Doxyfile

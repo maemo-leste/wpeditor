@@ -1,0 +1,288 @@
+wpeditor (2.35-1+0m5) unstable; urgency=low
+
+  * This entry has been added by BIFH queue processor
+    Suffix +0m5 added to package revision
+
+ -- Hunalli Mallikarjun Channappa <mallikarjun.hunalli@nokia.com>  Fri, 28 Aug 2009 09:07:43 +0300
+
+wpeditor (2.35-1) unstable; urgency=low
+
+  * Fixes: NB# 134385 [S3 proposal] Corematic: crash in
+    "pango_cairo_renderer_show_text_glyphs"
+
+ -- Maske Amish <amish.maske@nokia.com>  Wed, 26 Aug 2009 15:00:00 +0530
+
+wpeditor (2.32-1) unstable; urgency=low
+
+  * Fixes: NB#121082 [Proposal S3] Extra Lines in Modest due to wpeditor
+
+ -- Maske Amish <amish.maske@nokia.com>  Wed, 5 Aug 2009 12:00:00 +0530
+
+wpeditor (2.23-0) unstable; urgency=low
+
+  * Fixes: NB#98464 undo is not working in note
+
+ -- Maske Amish <amish.maske@nokia.com>  Wed, 29 Apr 2009 13:00:00 +0530
+
+wpeditor (2.22-0) unstable; urgency=low
+
+  * Fixes: NB#94890  saved format is lost for empty note file
+
+ -- Maske Amish <amish.maske@nokia.com>  Tue, 31 Mar 2009 13:00:00 +0530
+
+wpeditor (2.21-2) unstable; urgency=low
+
+  * Updated application mainintainer name in control file.
+
+ -- Sundaram Sandeep <sandeep.sundaram@nokia.com>  Wed, 11 Mar 2009 10:10:00 +0530
+
+wpeditor (2.21-1) unstable; urgency=low
+
+  * Fixes: NB#91231: old,italic,underline,color and bullets  items are not
+    highlighted in centain scenario for formatted notes.
+
+ -- Sundaram Sandeep <sandeep.sundaram@nokia.com>  Fri, 6 Mar 2009 12:15:00 +0530
+
+wpeditor (2.20-1) unstable; urgency=low
+
+  * Fixes: NB#92190: Notes application crashes if smileys are pasted
+
+ -- Sundaram Sandeep <sandeep.sundaram@nokia.com>  Fri, 12 Feb 2009 11:30:00 +0530
+
+wpeditor (2.19-1) unstable; urgency=low
+
+  * Modified code for compiling on the new gcc 4.x tool chain
+
+ -- Sundaram Sandeep <sandeep.sundaram@nokia.com>  Thu, 04 Sep 2008 17:00:00 +0530
+
+wpeditor (2.18-0) unstable; urgency=low
+
+  * Fixes: NB#82473 Font Face and Font size gets Disappeared
+
+ -- Qureshi Ahmad <Ahmad.Qureshi@nokia.com>  Wed, 19 Mar 2008 11:32:54 +0100
+
+wpeditor (2.17-0) unstable; urgency=low
+
+  * Fixes: NB#81205 space is showing in between text lines after receiving files
+
+ -- Qureshi Ahmad <Ahmad.Qureshi@nokia.com>  Mon, 10 Mar 2008 11:32:54 +0100
+
+wpeditor (2.16-0) unstable; urgency=low
+
+  * Fixes: NB#81108 [Chinese] Notes application crashed in some cases
+  * Fixes: NB#77179 Notes crashed while opening an non html file
+
+ -- Qureshi Ahmad <Ahmad.Qureshi@nokia.com>  Fri, 22 Feb 2008 15:37:03 +0100
+
+wpeditor (2.15-0) unstable; urgency=low
+
+  * Fixes: NB#77334 After sleep mode undo operation is dimmed
+  * Fixes: NB#74979 Adding a new line in the middle of two sets the font back to the previous font
+
+ -- Qureshi Ahmad <Ahmad.Qureshi@nokia.com>  Thu, 14 Feb 2008 11:52:34 +0100
+
+wpeditor (2.14-0) unstable; urgency=low
+
+  * Fixes: NB#78760 Previous text format is lost when Redo option is selected.
+
+ -- Qureshi Ahmad <Ahmad.Qureshi@nokia.com>  Wed, 23 Jan 2008 13:53:37 +0200
+
+wpeditor (2.13-0) unstable; urgency=low
+
+  * Fixes: NB#77527 size of unstriked text is reducing after changing the whole text to Bold format from Font dialog
+  * Fixes: NB#78364 Font size does not change properly in rich text editor
+
+ -- Qureshi Ahmad <Ahmad.Qureshi@nokia.com>  Mon, 10 Dec 2007 14:16:22 +0200
+
+wpeditor (2.12-0) unstable; urgency=low
+
+  * Patched disables undo on pixbuf ops
+  * NB#70305 Unable to change the font in spaces between words
+
+ -- Qureshi Ahmad <Ahmad.Qureshi@nokia.com>  Mon, 24 Sep 2007 12:07:29 +0300
+
+wpeditor (2.11-0) unstable; urgency=low
+
+  * Fixes: NB#64779 Inline images are shown as attachment when saved in the Drafts
+
+ -- Qureshi Ahmad <Ahmad.Qureshi@nokia.com>  Fri, 14 Sep 2007 09:07:57 +0300
+
+wpeditor (2.10-0) unstable; urgency=low
+
+  * Fixes: NB#58473 Save before closing confirmation note is coming in case of empty plain text file
+  * Fixes: NB#64558 Cursor position is not correct after UNDO on a bulletted text.
+  * Fixes: NB#52104 Cursor position is not working fine for Undo operation of Formatted Text.
+
+ -- Qureshi Ahmad <Ahmad.Qureshi@nokia.com>  Thu, 16 Aug 2007 17:37:23 +0300
+
+wpeditor (2.09-0) unstable; urgency=low
+
+  * Fixes: NB#64620 Notes is crashing
+  * patch for minor issues applied
+
+ -- Qureshi Ahmad <Ahmad.Qureshi@nokia.com>  Mon,  6 Aug 2007 12:59:04 +0300
+
+wpeditor (2.08-0) unstable; urgency=low
+
+  * applied wpeditor-add-image-replacements-api.patch
+
+ -- Qureshi Ahmad <Ahmad.Qureshi@nokia.com>  Mon, 23 Jul 2007 11:59:11 +0300
+
+wpeditor (2.07-0) unstable; urgency=low
+
+  * Fixes: NB#57566 Number of lines not displayed properly in details dialog of saved formatted text notes.
+
+ -- Qureshi Ahmad <Ahmad.Qureshi@nokia.com>  Wed, 18 Jul 2007 13:59:57 +0300
+
+wpeditor (2.06-0) unstable; urgency=low
+
+  * Fixes: NB#53240 Notes not compatible with files produced on OS2006
+ 
+ -- Qureshi Ahmad <Ahmad.Qureshi@nokia.com>  Fri, 05 Jul 2007 15:00:00 +0300
+
+wpeditor (2.05-2) unstable; urgency=low
+
+  * added conflicts too
+
+ -- Qureshi Ahmad <Ahmad.Qureshi@nokia.com>  Wed,  4 Jul 2007 19:03:45 +0300
+
+wpeditor (2.05-1) unstable; urgency=low
+
+  * added provides line to control file
+
+ -- Qureshi Ahmad <Ahmad.Qureshi@nokia.com>  Wed,  4 Jul 2007 18:16:30 +0300
+
+wpeditor (2.05-0) unstable; urgency=low
+
+  * binary package name changed to wpeditor0
+  * Fixes: NB#52107 Notes files are not valid HTML
+  * src/wptextbuffer.c:
+    * (change_font_tags): if it does not find any font tag in the
+      range, it applies the new font tag anyway. This should prevent
+      some issues setting a font in an empty buffer.
+    * (wp_text_buffer_apply_attributes): respects the default font
+      size and face to avoid going to fallback if no attributes have
+      been set previously.
+ 
+ -- Qureshi Ahmad <Ahmad.Qureshi@nokia.com>  Mon, 25 Jun 2007 15:01:03 +0300
+
+wpeditor (2.04-0) unstable; urgency=low
+
+  * applied patch: disabling rich text also removes images now
+
+ -- Qureshi Ahmad <Ahmad.Qureshi@nokia.com>  Thu, 10 May 2007 12:48:21 +0300
+
+wpeditor (2.03-0) unstable; urgency=low
+
+  * Fixes: NB#50852 wpeditor compiled without -Wall
+
+ -- Qureshi Ahmad <Ahmad.Qureshi@nokia.com>  Wed, 25 Apr 2007 16:55:51 +0300
+
+wpeditor (2.02-0) unstable; urgency=low
+
+  * Adding image handling
+  
+ -- Qureshi Ahmad <Ahmad.Qureshi@nokia.com>  Wed, 4 Apr 2007 12:50:46 +0300
+
+wpeditor (2.01-0) unstable; urgency=low
+
+  * First 1.1 release
+  
+ -- Qureshi Ahmad <Ahmad.Qureshi@nokia.com>  Mon, 12 Mar 2007 12:50:46 +0300
+
+
+wpeditor (1.01-3) unstable; urgency=low
+
+  * Fixes: NB#50530 Notes application crashes under memory full condition.
+
+ -- Ouyang Qi <qi.ouyang@nokia.com>  Mon, 26 Jan 2007 12:00:00 +0300
+
+wpeditor (1.01-2) unstable; urgency=low
+
+  * Fixes: NB#48379 Text formatting options are not working fine for Undo operation
+  * Fixes: NB#48880 Glib critical errors logged while selecting text at Notes
+  
+ -- Ouyang Qi <qi.ouyang@nokia.com>  Mon, 2 Jan 2007 12:00:00 +0300
+
+wpeditor (1.01-1) unstable; urgency=low
+
+  * Fixes: NB#42477 Typing different lines by selecting different text type is not working properly
+  
+ -- Ouyang Qi <qi.ouyang@nokia.com>  Mon, 4 Dec 2006 12:00:00 +0300
+
+wpeditor (1.01-0) unstable; urgency=low
+
+  * Fixes: NB#48624 The Notes version of the text view widget needs to be patched for extension events
+  
+ -- Ouyang Qi <qi.ouyang@nokia.com>  Mon, 4 Dec 2006 12:00:00 +0300
+
+wpeditor (0.1-9) unstable; urgency=low
+
+  * Fixes: NB#46263 Bulleted mark converted to star mark ( * ) when change formatted text to plain text.
+  
+ -- Ouyang Qi <qi.ouyang@nokia.com>  Mon, 13 Nov 2006 12:00:00 +0300
+
+wpeditor (0.1-6) unstable; urgency=low
+
+  * Fixes: NB#42871 Bullets can be added 3-4 times for same line
+  * Fixes: NB#43552 
+  * Fixes: NB#43809 'Internal error' dialog appears when notes application is closed without saving the note
+  
+ -- Ouyang Qi <qi.ouyang@nokia.com>  Wed, 23 Oct 2006 12:00:00 +0300
+
+wpeditor (0.1-5) unstable; urgency=low
+
+  * Fixes: NB#42010 Notes makes several BOM characters at beginning of plain text files
+  * Fixes: NB#42388 wpeditor 0.1-4
+  
+ -- Ouyang Qi <qi.ouyang@nokia.com>  Wed,  9 Oct 2006 12:00:00 +0300
+
+wpeditor (0.1-4) unstable; urgency=low
+
+  * Fixes: NB#39742 wpeditor-0.1: license issues
+  * Fixes: NB#39114 Tool bar color is not get changed when past text with VKB in new note.
+  * Fixes: NB#39116 Font face is not getting change when past text in new note from VKB.
+  * Fixes: NB#39117 Font size is not getting change when past text in new note from VKB.
+  * Fixes: NB#39119 Font formatting is not getting change when past text in new note by VKB.
+  * Fixes: NB#40062 Font face field in font dialog is left empty if a non-existent font of font dialog is selected from the font list in the toolbar
+  
+ -- Ouyang Qi <qi.ouyang@nokia.com>  Wed,  6 Sep 2006 12:00:00 +0300
+
+wpeditor (0.1-3) unstable; urgency=low
+
+  * Fixes: NB#38902 Undo option is not working fine.
+  * Fixes: NB#38916 Colour is getting changed without selecting text.
+  
+ -- Ouyang Qi <qi.ouyang@nokia.com>  Tue, 29 Aug 2006 12:00:00 +0300
+
+wpeditor (0.1-2) unstable; urgency=low
+
+  * Changes: License issues
+  * Fixes: NB#31715 AF-BAT:Word completion area clears when a character is deleted using backspace button
+  * Fixes: NB#36785 Select hardkey inserts a 'return' along with getting/closing IM in multiline text entry
+  * Fixes: NB#37847 wpeditor doesn't filter keys through the im context
+  * Fixes: NB#37448 Color selected not consistent in notes when we use hand written input method 
+  * Fixes: NB#37530 In handwriting mode,font face is not getting change from Font tool bar.
+  * Fixes: NB#37531 In handwriting mode, font size is not getting changed from font dialog.
+  * Fixes: NB#37532 In handwriting mode, positioning is not getting changed from font dialog.
+  * Fixes: NB#37534 In hand writing mode,"Strikethrough"is not working.
+  * Fixes: NB#38529 Text type is not working fine while converting plain text to formatted text.
+  * Fixes: NB#38711 Formatting is not removed when a formatted text is pasted in the plain notes file.
+  * Fixes: NB#38717 unable to remove the formatting from the pasted text.
+  * Fixes: NB#38712 same colour will be applied for the entire text while pasting a text with different colours.
+  * Fixes: NB#38881 Font face gettting blank when cancel save dialog.
+  * Fixes: NB#38884 Font size is getting blank when cancel save dialog.
+  
+ -- Ouyang Qi <qi.ouyang@nokia.com>  Tue, 11 Aug 2006 12:00:00 +0300
+
+wpeditor (0.1-1) unstable; urgency=low
+
+  * Fixes: 35750 Tool bar option remains default,,when open formatted text note from gateway.
+  
+ -- Ouyang Qi <qi.ouyang@nokia.com>  Tue, 25 Jul 2006 12:00:00 +0300
+
+wpeditor (0.1-0) unstable; urgency=low
+
+  * Initial release
+  
+ -- Ouyang Qi <qi.ouyang@nokia.com>  Tue, 19 Jul 2006 14:00:00 +0300

@@ -1,0 +1,3 @@
+usr/lib/*.so
+usr/lib/pkgconfig/wpeditor.pc
+usr/include/@PACKAGE_INC@/*.h

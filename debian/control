@@ -1,0 +1,30 @@
+Source: wpeditor
+Section: libs
+Priority: optional
+Maintainer: Amish Maske <amish.maske@nokia.com>
+Build-Depends: debhelper (>= 4.0.0), libgtk2.0-dev, libglib2.0-dev
+Standards-Version: 3.6.0
+
+Package: wpeditor0
+Architecture: any
+Depends: ${shlibs:Depends}
+Provides: wpeditor
+Conflicts: wpeditor
+Description: WordPad Text Editor library
+ A library implementing WPTextBuffer and WPTextView, 
+ which can be used to easily support rich text editing.
+
+Package: wpeditor-dev
+Section: devel
+Architecture: all
+Depends: wpeditor0 (= ${Source-Version})
+Description: WordPad Text Editor library development files
+ Development files for wpeditor
+
+Package: wpeditor0-dbg
+Section: devel
+Architecture: any
+Depends: wpeditor0 (= ${Source-Version})
+Description: WordPad Text Editor debug symbols
+ Debug symbols for WordPad Text Editor.
+
