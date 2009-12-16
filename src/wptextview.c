@@ -252,10 +252,10 @@ wp_text_view_init(WPTextView * view)
     g_signal_connect(text_view->im_context, "delete_surrounding",
                      G_CALLBACK(wp_text_view_delete_surrounding_handler),
                      text_view);
+#ifdef HAVE_HILDON
     g_signal_connect(text_view->im_context, "has_selection",
                      G_CALLBACK(wp_text_view_has_selection_handler),
                      text_view);
-#ifdef HAVE_HILDON
     g_signal_connect(text_view->im_context, "clipboard_operation",
                      G_CALLBACK(wp_text_view_clipboard_operation_handler),
                      text_view);
