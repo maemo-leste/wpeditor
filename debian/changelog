@@ -1,3 +1,29 @@
+wpeditor (2.35-1modest3) karmic; urgency=low
+
+  * More fixes in debian packaging.
+  * Add source dependency on automake
+
+ -- Jose Dapena Paz <jdapena@igalia.com>  Thu, 17 Dec 2009 17:34:33 +0100
+
+wpeditor (2.35-1modest2) karmic; urgency=low
+
+  * More fixes in debian packaging.
+  * Add source dependency on libtool
+
+ -- Jose Dapena Paz <jdapena@igalia.com>  Thu, 17 Dec 2009 16:57:28 +0100
+
+wpeditor (2.35-1modest1) karmic; urgency=low
+
+  * Fix clean stage in autobuild
+
+ -- Jose Dapena Paz <jdapena@igalia.com>  Thu, 17 Dec 2009 16:29:14 +0100
+
+wpeditor (2.35-1modest0) karmic; urgency=low
+
+  * Custom build for jdapena/modest ppa in ubuntu
+
+ -- Jose Dapena Paz <jdapena@igalia.com>  Wed, 16 Dec 2009 11:49:41 +0100
+
 wpeditor (2.35-1+0m5) unstable; urgency=low
 
   * This entry has been added by BIFH queue processor

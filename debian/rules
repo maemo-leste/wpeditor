@@ -50,12 +50,12 @@ build-stamp:  config.status
 
 	touch build-stamp
 
-clean:
+clean: config-stamp
 	dh_testdir
 	dh_testroot
 	rm -f build-stamp config-stamp
 
-	-$(MAKE) distclean
+	[ ! -f Makefile ] || $(MAKE) distclean
 ifneq "$(wildcard /usr/share/misc/config.sub)" ""
 	cp -f /usr/share/misc/config.sub config.sub
 endif

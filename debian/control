@@ -2,7 +2,8 @@ Source: wpeditor
 Section: libs
 Priority: optional
 Maintainer: Amish Maske <amish.maske@nokia.com>
-Build-Depends: debhelper (>= 4.0.0), libgtk2.0-dev, libglib2.0-dev
+Build-Depends: debhelper (>= 4.0.0), autoconf, automake, libtool, pkg-config, libgtk2.0-dev,
+ libglib2.0-dev
 Standards-Version: 3.6.0
 
 Package: wpeditor0
@@ -16,15 +17,15 @@ Description: WordPad Text Editor library
 
 Package: wpeditor-dev
 Section: devel
-Architecture: all
-Depends: wpeditor0 (= ${Source-Version})
+Architecture: any
+Depends: wpeditor0 (= ${binary:Version})
 Description: WordPad Text Editor library development files
  Development files for wpeditor
 
 Package: wpeditor0-dbg
 Section: devel
 Architecture: any
-Depends: wpeditor0 (= ${Source-Version})
+Depends: wpeditor0 (= ${binary:Version})
 Description: WordPad Text Editor debug symbols
  Debug symbols for WordPad Text Editor.
 
