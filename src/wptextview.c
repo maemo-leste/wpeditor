@@ -193,9 +193,9 @@ static gboolean wp_text_view_delete_surrounding_handler(GtkIMContext *
                                                         gint n_chars,
                                                         GtkTextView *
                                                         text_view);
+#ifdef HAVE_HILDON
 static gboolean wp_text_view_has_selection_handler(GtkIMContext * context,
                                                    GtkTextView * text_view);
-#ifdef HAVE_HILDON
 static void wp_text_view_clipboard_operation_handler(GtkIMContext * context,
                                                      GtkIMContextClipboardOperation
                                                      op,
@@ -1397,6 +1397,7 @@ wp_text_view_delete_surrounding_handler(GtkIMContext * context,
     return TRUE;
 }
 
+#ifdef HAVE_HILDON
 static gboolean
 wp_text_view_has_selection_handler(GtkIMContext * context,
                                    GtkTextView * text_view)
@@ -1407,7 +1408,6 @@ wp_text_view_has_selection_handler(GtkIMContext * context,
     return gtk_text_buffer_get_selection_bounds(buffer, NULL, NULL);
 }
 
-#ifdef HAVE_HILDON
 static void
 wp_text_view_clipboard_operation_handler(GtkIMContext * context,
                                          GtkIMContextClipboardOperation op,
