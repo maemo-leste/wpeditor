@@ -1681,7 +1681,7 @@ thaw_cursor_moved(WPTextBuffer * buffer)
 static gboolean
 check_tag_type(GtkTextTag * tag, gint base, gint * nr)
 {
-    gint val = (gint) g_object_get_data(G_OBJECT(tag), WPT_ID);
+    gint val = GPOINTER_TO_INT (g_object_get_data(G_OBJECT(tag), WPT_ID));
     gboolean result = val >= base && val <= base + 999;
     if (result && nr)
         *nr = val - base;
@@ -1696,7 +1696,7 @@ check_tag_type(GtkTextTag * tag, gint base, gint * nr)
 static gboolean
 check_tag_fontsize_type(GtkTextTag * tag)
 {
-    gint val = (gint) g_object_get_data(G_OBJECT(tag), WPT_ID);
+    gint val = GPOINTER_TO_INT (g_object_get_data(G_OBJECT(tag), WPT_ID));
     return (val >= WPT_FONT_SIZE && val <= WPT_FONT_SIZE + 999) ||
         (val >= WPT_SUB_SRPT && val <= WPT_SUB_SRPT + 999) ||
         (val >= WPT_SUP_SRPT && val <= WPT_SUP_SRPT + 999);
@@ -2542,7 +2542,7 @@ wp_text_buffer_set_attribute(WPTextBuffer * buffer, gint tagid, gpointer data)
 {
     g_return_val_if_fail(WP_IS_TEXT_BUFFER(buffer), FALSE);
     WPTextBufferPrivate *priv = buffer->priv;
-    gboolean enable = (gboolean) data;
+    gboolean enable = (gboolean) GPOINTER_TO_INT (data);
 
     // wp_undo_reset_mergeable(buffer->priv->undo);
 
@@ -2594,11 +2594,11 @@ wp_text_buffer_set_attribute(WPTextBuffer * buffer, gint tagid, gpointer data)
             return TRUE;
             break;
         case WPT_FONT:
-            priv->fmt.font = (gint) data;
+            priv->fmt.font = GPOINTER_TO_INT (data);
             priv->fmt.cs.font = TRUE;
             break;
         case WPT_FONT_SIZE:
-            priv->fmt.font_size = (gint) data;
+            priv->fmt.font_size = GPOINTER_TO_INT (data);
             priv->fmt.cs.font_size = TRUE;
             break;
         case WPT_FORECOLOR:
@@ -2806,7 +2806,7 @@ _wp_text_buffer_get_attributes(WPTextBuffer * buffer,
         }
         else if (tag->rise_set)
         {
-            n = (gint) g_object_get_data(G_OBJECT(tag), WPT_ID);
+            n = GPOINTER_TO_INT (g_object_get_data(G_OBJECT(tag), WPT_ID));
             if (n >= WPT_SUB_SRPT)
             {
                 fmt->text_position = TEXT_POSITION_SUBSCRIPT;
@@ -3702,7 +3702,7 @@ convert_tag(GtkTextTag ** ttags, GtkTextTag * tag, gint * id,
         return TP_STRIKE;
     else if (tag->rise_set)
     {
-        *id = (gint) g_object_get_data(G_OBJECT(tag), WPT_ID);
+	*id = GPOINTER_TO_INT (g_object_get_data(G_OBJECT(tag), WPT_ID));
         if (*id >= WPT_SUB_SRPT)
         {
             *id -= WPT_SUB_SRPT;
