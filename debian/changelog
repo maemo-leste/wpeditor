@@ -1,3 +1,29 @@
+wpeditor (2.46-1modest0) karmic; urgency=low
+
+  * Modest custom build of wpeditor for jdapena ppa.
+  * Upstream release 2.46.
+
+ -- Jose Dapena Paz <jdapena@igalia.com>  Thu, 14 Jan 2010 13:29:53 +0100
+
+wpeditor (2.46-1+0m5) unstable; urgency=low
+
+  * This entry has been added by BIFH queue processor
+    Suffix +0m5 added to package revision
+
+ -- Aravind Venkata <ext-aravind.taduturi@nokia.com>  Mon, 16 Nov 2009 19:24:21 +0200
+
+wpeditor (2.46-1) unstable; urgency=low
+
+  * Fixes: NB#140826 [PR1.1] Incompatible line breaks in sent html mails
+
+ -- Maske Amish <amish.maske@nokia.com>  Mon, 9 Nov 2009 18:00:00 +0530
+
+wpeditor (2.44-2) unstable; urgency=low
+
+  * Fixes: NB# 140583 [PR1.1] wp_undo_insert_text leaks memory
+
+ -- Maske Amish <amish.maske@nokia.com>  Tue, 28 Oct 2009 09:52:00 +0530
+
 wpeditor (2.35-1modest4) karmic; urgency=low
 
   * Fix build in amd64
@@ -29,13 +55,6 @@ wpeditor (2.35-1modest0) karmic; urgency=low
   * Custom build for jdapena/modest ppa in ubuntu
 
  -- Jose Dapena Paz <jdapena@igalia.com>  Wed, 16 Dec 2009 11:49:41 +0100
-
-wpeditor (2.35-1+0m5) unstable; urgency=low
-
-  * This entry has been added by BIFH queue processor
-    Suffix +0m5 added to package revision
-
- -- Hunalli Mallikarjun Channappa <mallikarjun.hunalli@nokia.com>  Fri, 28 Aug 2009 09:07:43 +0300
 
 wpeditor (2.35-1) unstable; urgency=low
 

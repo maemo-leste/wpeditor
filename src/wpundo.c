@@ -1160,7 +1160,9 @@ wp_undo_insert_text(WPUndo * undo,
         if (la->end == co.start &&
             (is_space || !undo->priv->last_char_is_space))
         {
+           gchar*temp_str = la->text;
             la->text = g_strconcat(la->text, text, NULL);
+	   g_free(temp_str);  /*bug 140583*/
             update_tags_range(la->tags, la->start, la->end);
             undo->priv->last_char_is_space = is_space;
             la->end = co.end;
@@ -1514,6 +1516,9 @@ wp_undo_add_queue(WPUndo * undo, WPUndoOperation * op)
 
     if (priv->disable_this_group)
     {
+    	
+	/*bug 140583*/
+	g_free(op->text);
         g_free(op);
         return;
     }

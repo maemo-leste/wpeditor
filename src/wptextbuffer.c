@@ -3900,7 +3900,7 @@ begin_paragraph(WPTextBufferPrivate * priv,
     }
    // else
     else if (*p_opened) {
-        result = save("\n<br/>", user_data);
+        result = save("\n<br>", user_data);
 	*close_p = FALSE;
     } else {
         result = save("<p>", user_data);
@@ -4070,7 +4070,7 @@ wp_text_buffer_save_document(WPTextBuffer * buffer,
              if (gtk_text_iter_ends_line(&start)) {
                 // result = save("<p></p>\n", user_data);
 		 if (p_opened){ 
-		     result = save ("<br/></p>\n", user_data);
+		     result = save ("<br></p>\n", user_data);
 		     p_opened = FALSE;
 		     close_p = FALSE;
 		 } else {
