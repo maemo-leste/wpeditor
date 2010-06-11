@@ -374,13 +374,13 @@ wp_text_view_key_press_event(GtkWidget * widget, GdkEventKey * event)
 {
     WPTextView *view;
     GtkTextView *text_view;
-    GtkTextBuffer *buffer;
+    //GtkTextBuffer *buffer;
     gboolean handled = FALSE;
     int keyval = event->keyval;
 
     view = WP_TEXT_VIEW(widget);
     text_view = GTK_TEXT_VIEW(widget);
-    buffer = gtk_text_view_get_buffer(text_view);
+    //buffer = gtk_text_view_get_buffer(text_view);
 
 #ifdef HAVE_HILDON
     if (text_view->editable &&

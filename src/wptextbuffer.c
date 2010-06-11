@@ -1619,8 +1619,10 @@ emit_refresh_attributes(WPTextBuffer * buffer, const GtkTextIter * where)
 
     if (where == NULL)
         return;
-
-    gint tmp = where ? gtk_text_iter_get_offset(where) : 0;
+    /* As there is already a null check for where 
+     * w donot have to test for null again here */
+   // gint tmp = where ? gtk_text_iter_get_offset(where) : 0;
+    gint tmp = gtk_text_iter_get_offset(where);
 
     if (!buffer->priv->cursor_moved_frozen)
     {
@@ -2190,8 +2192,10 @@ wp_text_buffer_apply_attributes(WPTextBuffer * buffer, GtkTextIter * start,
             if (undo)
             {
                 if (!gtk_text_iter_ends_line(&eiter))
+                {
                     gtk_text_iter_forward_to_line_end(&eiter);
-                gtk_text_iter_forward_char(&eiter);
+                    gtk_text_iter_forward_char(&eiter);
+                }			
             }
 
             if ((buffer_end = gtk_text_iter_is_end(&eiter)))
@@ -2206,7 +2210,45 @@ wp_text_buffer_apply_attributes(WPTextBuffer * buffer, GtkTextIter * start,
                     return result;
                 }
                 else
+                {
                     set_justification = TRUE;
+		     result = TRUE;
+		     gtk_text_iter_forward_char(&eiter);
+		    	 
+                     if (undo)
+                         wp_undo_apply_tag(buffer->priv->undo, &siter, &eiter,
+                                           NULL, FALSE);
+     
+                     gtk_text_buffer_set_modified(text_buffer, TRUE);
+     
+                     cs.justification = FALSE;
+                     /* printf("Line: %d-%d\n", gtk_text_iter_get_offset(&siter),
+                      * gtk_text_iter_get_offset(&eiter)); */
+                     if (fmt->justification == GTK_JUSTIFY_LEFT)
+                         gtk_text_buffer_apply_tag(text_buffer,
+                                                   ttags[WPT_LEFT], &siter,
+                                                   &eiter);
+                     else if (undo)
+                         gtk_text_buffer_remove_tag(text_buffer,
+                                                    ttags[WPT_LEFT], &siter,
+                                                    &eiter);
+                     if (fmt->justification == GTK_JUSTIFY_CENTER)
+                         gtk_text_buffer_apply_tag(text_buffer,
+                                                   ttags[WPT_CENTER], &siter,
+                                                   &eiter);
+                     else if (undo)
+                         gtk_text_buffer_remove_tag(text_buffer,
+                                                    ttags[WPT_CENTER], &siter,
+                                                    &eiter);
+                     if (fmt->justification == GTK_JUSTIFY_RIGHT)
+                         gtk_text_buffer_apply_tag(text_buffer,
+                                                   ttags[WPT_RIGHT], &siter,
+                                                   &eiter);
+                     else if (undo)
+                         gtk_text_buffer_remove_tag(text_buffer,
+                                                    ttags[WPT_RIGHT], &siter,
+                                                    &eiter);			
+                }			
             }
             else
             {
@@ -2491,11 +2533,11 @@ void wp_text_buffer_insert_image_replacement (WPTextBuffer *buffer,
     GtkTextTag *pixbuf_tag;
     GtkTextTagTable *tag_table;
     gchar *tag_id;
-    gchar * img_id_copy = NULL;
+    //gchar * img_id_copy = NULL;
     g_return_if_fail(WP_IS_TEXT_BUFFER(buffer));
     g_return_if_fail (image_id);
     
-    img_id_copy = g_strdup (image_id);
+    //img_id_copy = g_strdup (image_id);
 
     tag_id = g_strdup_printf("image-tag-replace-%s", image_id);
     tag_table = gtk_text_buffer_get_tag_table (GTK_TEXT_BUFFER (buffer));
@@ -3602,7 +3644,7 @@ encode_text(GtkTextIter * start,
     text = gtk_text_iter_get_text(start, end);
 
     /* Bug NB#94890:If the first character is a space*/
-    if (text[0] == ' ')
+    if ( text && text[0] == ' ')
 	    space = TRUE;
 
     if (text && *text)
@@ -3794,11 +3836,13 @@ write_tags(WPTextBufferPrivate * priv,
                     case TP_SUPERSCRIPT:
                         if (info != priv->default_fmt.font_size)
                         {
-                            s = g_strdup_printf(html_open_tags[TP_FONTSIZE],
-                                                info);
+		             // s is not used here anymore so no need of it		
+                            //s = g_strdup_printf(html_open_tags[TP_FONTSIZE],
+                            //                    info);
                             result =
                                 save(html_close_tags[TP_FONTSIZE], user_data);
                             htags[TP_FONTSIZE]--;
+			    //g_free(s);
                         }
                         if (id != TP_FONTSIZE && !result)
                         {

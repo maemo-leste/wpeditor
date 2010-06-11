@@ -920,6 +920,7 @@ wp_html_parser_write(WPHTMLParser * parser, gchar * buffer, gint size)
                 }
                 else
                     pos++;
+		break;
             default:
                 g_assert("Should not happen!!");
         }
