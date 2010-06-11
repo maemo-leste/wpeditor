@@ -559,7 +559,7 @@ wp_undo_apply_saved_tags(GtkTextBuffer * buffer, GSList * tags)
     {
         tag = (WPUndoTag *) current->data;
         if (tag->apply) {
-            gchar *tag_name;
+            gchar *tag_name = NULL;
             g_object_get (G_OBJECT (tag->tag), "name", &tag_name, NULL);
             gtk_text_buffer_get_iter_at_offset(buffer, &s, tag->start);
             gtk_text_buffer_get_iter_at_offset(buffer, &e, tag->end);
@@ -583,6 +583,8 @@ wp_undo_apply_saved_tags(GtkTextBuffer * buffer, GSList * tags)
             } else {
                 gtk_text_buffer_apply_tag(buffer, tag->tag, &s, &e);
             }
+	 /* freeing the tag_name */
+	 g_free(tag_name);
          }
         current = current->next;
     }
@@ -931,7 +933,8 @@ wp_undo_redo(WPUndo * undo)
         undo->priv->current_op = NULL;
         undo->priv->current_op_list = NULL;
     }
-    lact_head = g_slist_reverse(lact_head);
+    // no point in reversing as it is no longer used.
+    //lact_head = g_slist_reverse(lact_head);
 
     if (proposed_cursor_pos != -1)
     {
@@ -1334,11 +1337,14 @@ wp_undo_apply_tag(WPUndo * undo,
         op->orig_tags = wp_undo_get_toggled_tags(undo, start, end);
         op->start = gtk_text_iter_get_offset(start);
         op->end = gtk_text_iter_get_offset(end);
+#if 0
+       /* 	commented as it is a dead code  */
         if (tag)
             op->tags = g_slist_prepend(NULL,
                                        wp_undo_create_tag(op->start,
                                                           end, tag, enable));
         else
+#endif 
             op->tags = NULL;
 
         op->mergeable = FALSE;

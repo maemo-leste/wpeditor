@@ -1,16 +1,48 @@
+wpeditor (3.53-1modest0) karmic; urgency=low
+
+  * Modest custom build of wpeditor for jdapena ppa.
+  * Upstream release 3.53.
+
+ -- Jose Dapena Paz <jdapena@igalia.com>  Fri, 11 Jun 2010 20:04:10 +0200
+
+wpeditor (3.53-1+0m5) unstable; urgency=low
+
+  * This entry has been added by BIFH queue processor
+    Suffix +0m5 added to package revision
+
+ -- Aravind Venkata <ext-aravind.taduturi@nokia.com>  Tue, 05 Jan 2010 10:39:47 +0200
+
+wpeditor (3.53-1) unstable; urgency=low
+
+  * Fixes: NB#144062 coverity defects from wpeditor 
+
+ -- Maske Amish <amish.maske@nokia.com>  Mon, 28 Dec 2009 12:45:00 +0530
+
+wpeditor (3.50-1) unstable; urgency=low
+
+  * Fixes: NB#130499 Remove Scratchboxism in wpeditor... 
+
+ -- Maske Amish <amish.maske@nokia.com>  Thu, 10 Dec 2009 15:15:00 +0530
+
+wpeditor (3.49-1) unstable; urgency=low
+
+  * Fixes: NB#135061 [PR1.2] <MemLeak> /wpeditor-2.32 
+
+ -- Maske Amish <amish.maske@nokia.com>  Thu, 03 Dec 2009 15:15:00 +0530
+
+wpeditor (2.48-1) unstable; urgency=low
+
+  * Fixes: NB#146803 [PR1.2] alignment is not working properly in notes
+    application in the middle of text
+
+ -- Maske Amish <amish.maske@nokia.com>  Wed, 25 Nov 2009 12:30:00 +0530
+
 wpeditor (2.46-1modest0) karmic; urgency=low
 
   * Modest custom build of wpeditor for jdapena ppa.
   * Upstream release 2.46.
 
  -- Jose Dapena Paz <jdapena@igalia.com>  Thu, 14 Jan 2010 13:29:53 +0100
-
-wpeditor (2.46-1+0m5) unstable; urgency=low
-
-  * This entry has been added by BIFH queue processor
-    Suffix +0m5 added to package revision
-
- -- Aravind Venkata <ext-aravind.taduturi@nokia.com>  Mon, 16 Nov 2009 19:24:21 +0200
 
 wpeditor (2.46-1) unstable; urgency=low
 
@@ -20,7 +52,7 @@ wpeditor (2.46-1) unstable; urgency=low
 
 wpeditor (2.44-2) unstable; urgency=low
 
-  * Fixes: NB# 140583 [PR1.1] wp_undo_insert_text leaks memory
+  * Fixes: NB#140583 [PR1.1] wp_undo_insert_text leaks memory
 
  -- Maske Amish <amish.maske@nokia.com>  Tue, 28 Oct 2009 09:52:00 +0530
 
