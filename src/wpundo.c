@@ -823,7 +823,6 @@ wp_undo_redo(WPUndo * undo)
     GtkTextBuffer *text_buffer;
     GtkTextIter start, end;
     gint proposed_cursor_pos = -1;
-    WPUndoTag *utag;
 
     g_return_if_fail(WP_IS_UNDO(undo));
 
@@ -876,8 +875,6 @@ wp_undo_redo(WPUndo * undo)
 
                 break;
             case WP_UNDO_TAG:
-                utag = (WPUndoTag *) op->tags->data;
-
                 gtk_text_buffer_get_iter_at_offset(text_buffer,
                                                    &start, op->start);
                 gtk_text_buffer_get_iter_at_offset(text_buffer, &end,
