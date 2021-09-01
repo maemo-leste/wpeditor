@@ -510,6 +510,45 @@ iround(double value)
     return (gint) (value + 0.5);
 }
 
+/**
+ * Inline function to set all #WPTextBufferFormatChangeSet members to false
+ * @param cs changeset to set
+ */
+static inline void
+changeset_clear(WPTextBufferFormatChangeSet *cs)
+{
+    cs->bold = FALSE;
+    cs->italic = FALSE;
+    cs->underline = FALSE;
+    cs->strikethrough = FALSE;
+    cs->justification = FALSE;
+    cs->text_position = FALSE;
+    cs->color = FALSE;
+    cs->font_size = FALSE;
+    cs->font = FALSE;
+    cs->bullet = FALSE;
+}
+
+/**
+ * Inline function to check if #WPTextBufferFormatChangeSet has any member set
+ * @param cs changeset to test
+ * @return <i>TRUE</i> if <i>cs</i> has any member set, <i>FALSE</i> otherwise
+ */
+static inline gboolean
+changeset_is_set(WPTextBufferFormatChangeSet *cs)
+{
+    return !!(cs->bold |
+              cs->italic |
+              cs->underline |
+              cs->strikethrough |
+              cs->justification |
+              cs->text_position |
+              cs->color |
+              cs->font_size |
+              cs->font |
+              cs->bullet);
+}
+
 static void
 wp_text_buffer_class_init(WPTextBufferClass * klass)
 {
@@ -1633,7 +1672,7 @@ emit_refresh_attributes(WPTextBuffer * buffer, const GtkTextIter * where)
 
             if (!gtk_text_iter_is_start(where)
                 && !gtk_text_iter_is_end(where))
-                *(int *) &buffer->priv->fmt.cs = 0;
+                changeset_clear(&buffer->priv->fmt.cs);
 
             if (buffer->priv->source_refresh_attributes)
                 g_source_remove(buffer->priv->source_refresh_attributes);
@@ -2170,7 +2209,7 @@ wp_text_buffer_apply_attributes(WPTextBuffer * buffer, GtkTextIter * start,
         clear_set = TRUE;
     }
     cs = fmt->cs;
-    if (*(gint *) & cs != 0)
+    if (changeset_is_set(&cs))
     {
         ttags = buffer->priv->tags;
         text_buffer = GTK_TEXT_BUFFER(buffer);
@@ -2291,7 +2330,7 @@ wp_text_buffer_apply_attributes(WPTextBuffer * buffer, GtkTextIter * start,
             }
         }
 
-        if ((*(gint *) & cs) != 0 && !gtk_text_iter_equal(start, end))
+        if (changeset_is_set(&cs) && !gtk_text_iter_equal(start, end))
         {
             gtk_text_buffer_set_modified(text_buffer, TRUE);
             result = TRUE;
@@ -2403,7 +2442,7 @@ wp_text_buffer_apply_attributes(WPTextBuffer * buffer, GtkTextIter * start,
 
         if (clear_set)
         {
-            *(gint *) & buffer->priv->fmt.cs = 0;
+            changeset_clear(&buffer->priv->fmt.cs);
             if (set_justification)
                 buffer->priv->fmt.cs.justification = TRUE;
         }
@@ -2916,7 +2955,7 @@ wp_text_buffer_get_attributes(WPTextBuffer * buffer,
     {
         buffer->priv->fmt.bullet = FALSE;
         *fmt = buffer->priv->fmt;
-        memset(&fmt->cs, 0, sizeof(WPTextBufferFormatChangeSet));
+        changeset_clear(&fmt->cs);
     }
     else
     {
@@ -2954,7 +2993,7 @@ wp_text_buffer_get_current_state(WPTextBuffer * buffer,
     g_return_if_fail(WP_IS_TEXT_BUFFER(buffer));
 
     _wp_text_buffer_get_attributes(buffer, fmt, FALSE, FALSE);
-    memset(&fmt->cs, 0, sizeof(WPTextBufferFormatChangeSet));
+    changeset_clear(&fmt->cs);
 }
 
 /********
@@ -3580,7 +3619,7 @@ wp_text_buffer_load_document_end(WPTextBuffer * buffer)
     wp_text_buffer_thaw(buffer);
     wp_undo_thaw(buffer->priv->undo);
     buffer->priv->fast_mode = FALSE;
-    memset(&buffer->priv->fmt.cs, 0, sizeof(WPTextBufferFormatChangeSet));
+    changeset_clear(&buffer->priv->fmt.cs);
 
     emit_default_justification_changed(buffer, last_line_justification);
     g_signal_emit(buffer, signals[REFRESH_ATTRIBUTES], 0);
