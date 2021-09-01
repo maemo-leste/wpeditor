@@ -1,3 +1,9 @@
+wpeditor (3.53.1) unstable; urgency=low
+
+  * Port to leste
+
+ -- Ivaylo Dimitrov <ivo.g.dimitrov.75@gmail.com>  Wed, 01 Sep 2021 16:56:17 +0300
+
 wpeditor (3.53-1modest0) karmic; urgency=low
 
   * Modest custom build of wpeditor for jdapena ppa.
